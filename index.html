@@ -17,99 +17,179 @@
     <main>
       <aside class="sidebar">
         <h1>Wisdom</h1>
-        <ul>
-          <li>
-            <a class="active" href="index.html">
-              <i class="fa-regular fa-chart-bar fa-fw"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="settings.html">
-              <i class="fa-solid fa-gear fa-fw"></i>
-              <span>Settings</span>
-            </a>
-          </li>
-          <li>
-            <a href="profile.html">
-              <i class="fa-regular fa-user fa-fw"></i>
-              <span>Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="projects.html">
-              <i class="fa-solid fa-diagram-project fa-fw"></i>
-              <span>Projects</span>
-            </a>
-          </li>
-          <li>
-            <a href="courses.html">
-              <i class="fa-solid fa-graduation-cap fa-fw"></i>
-              <span>Courses</span>
-            </a>
-          </li>
-          <li>
-            <a href="friends.html">
-              <i class="fa-regular fa-circle-user fa-fw"></i>
-              <span>Friends</span>
-            </a>
-          </li>
-          <li>
-            <a href="files.html">
-              <i class="fa-regular fa-file fa-fw"></i>
-              <span>Files</span>
-            </a>
-          </li>
-          <li>
-            <a href="plans.html">
-              <i class="fa-regular fa-credit-card fa-fw"></i>
-              <span>Plans</span>
-            </a>
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li>
+              <a class="active" href="index.html">
+                <i class="fa-regular fa-chart-bar fa-fw"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="settings.html">
+                <i class="fa-solid fa-gear fa-fw"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html">
+                <i class="fa-regular fa-user fa-fw"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="projects.html">
+                <i class="fa-solid fa-diagram-project fa-fw"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html">
+                <i class="fa-solid fa-graduation-cap fa-fw"></i>
+                <span>Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="friends.html">
+                <i class="fa-regular fa-circle-user fa-fw"></i>
+                <span>Friends</span>
+              </a>
+            </li>
+            <li>
+              <a href="files.html">
+                <i class="fa-regular fa-file fa-fw"></i>
+                <span>Files</span>
+              </a>
+            </li>
+            <li>
+              <a href="plans.html">
+                <i class="fa-regular fa-credit-card fa-fw"></i>
+                <span>Plans</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </aside>
       <section class="content">
         <header>
-          <section class="search">
+          <div class="search">
             <input type="search" placeholder="Type a keyword..." />
-          </section>
-          <section class="icons">
+          </div>
+          <div class="icons">
             <span class="notification">
               <i class="fa-regular fa-bell fa-lg"></i>
             </span>
             <img src="imgs/avatar.png" alt="avatar" />
-          </section>
+          </div>
         </header>
         <h2>Dashboard</h2>
         <section class="cards d-grid">
-          <section class="card">
-            <section class="intro">
-              <section>
+          <section class="card welcome">
+            <header>
+              <div>
                 <h3>Welcome</h3>
-                <h5>Wisdom</h5>
-              </section>
+                <p class="title">Wisdom</p>
+              </div>
               <img src="imgs/welcome.png" alt="welcome" />
-            </section>
+            </header>
             <img src="imgs/avatar.png" alt="avatar" />
-            <section class="info">
-                <section class="data">
-                    <h4>Mona Elshikh</h4>
-                    <h5>Developer</h5>
-                </section>
-                <section class="data">
-                    <h4>80</h4>
-                    <h5>Projects</h5>
-                </section>
-                <section class="data">
-                    <h4>$1000</h4>
-                    <h5>Earned</h5>
-                </section>    
-            </section>
-            <section class="foot"><button class="btn-main">Profile</button></section>
+            <div class="info">
+              <div class="data">
+                Mona Elshikh
+                <p class="sub-title">Developer</p>
+              </div>
+              <div class="data">
+                80
+                <p class="sub-title">Projects</p>
+              </div>
+              <div class="data">
+                $1000
+                <p class="sub-title">Earned</p>
+              </div>
+            </div>
+            <footer>
+              <a class="btn btn-prim" href="profile.html">Profile</a>
+            </footer>
           </section>
-          <section class="card"><h3>Quick Drafts</h3></section>
-          <section class="card"><h3>Yearly Targets</h3></section>
-          <section class="card"><h3>Tickets Statistics</h3></section>
+          <section class="card quick">
+            <div>
+              <h3>Quick Drafts</h3>
+              <p class="title">Write A Draft For Your Ideas</p>
+            </div>
+            <form>
+              <input type="text" name="title" placeholder="Title" />
+              <textarea name="details" placeholder="Your Thought"></textarea>
+              <input type="submit" value="Save" class="btn btn-prim" />
+            </form>
+          </section>
+          <section class="card targets">
+            <div>
+              <h3>Yearly Targets</h3>
+              <p class="title">Targets Of the Year</p>
+            </div>
+            <div class="info">
+              <div class="sign center-flex">
+                <i class="fa-solid fa-dollar-sign fa-lg"></i>
+              </div>
+              <div class="details">
+                <p class="sub-title">Money</p>
+                <p>$20.000</p>
+                <div class="progress">
+                  <span><span>80%</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="info">
+              <div class="sign center-flex">
+                <i class="fa-solid fa-code fa-lg c-orange"></i>
+              </div>
+              <div class="details">
+                <p class="sub-title">Projects</p>
+                <p>24</p>
+                <div class="progress">
+                  <span><span>55%</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="info center-flex">
+              <div class="sign center-flex">
+                <i class="fa-solid fa-user fa-lg c-green"></i>
+              </div>
+              <div class="details">
+                <p class="sub-title">Team</p>
+                <p>12</p>
+                <div class="progress">
+                  <span><span>75%</span></span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="card statistics">
+            <h3>Tickets Statistics</h3>
+            <p class="title">Everything About Support Tickets</p>
+            <div class="tickets">
+              <div class="ticket">
+                <i class="fa-regular fa-rectangle-list fa-2x"></i>
+                <p>2500</p>
+                <p class="sub-title">Total</p>
+              </div>
+              <div class="ticket">
+                <i class="fa-solid fa-spinner fa-2x"></i>
+                <p>500</p>
+                <p class="sub-title">Pending</p>
+              </div>
+              <div class="ticket">
+                <i class="fa-regular fa-circle-check fa-2x"></i>
+                <p>1900</p>
+                <p class="sub-title">Closed</p>
+              </div>
+              <div class="ticket">
+                <i class="fa-regular fa-rectangle-xmark fa-2x"></i>
+                <p>100</p>
+                <p class="sub-title">Deleted</p>
+              </div>
+            </div>
+          </section>
           <section class="card"><h3>Latest News</h3></section>
           <section class="card"><h3>Latest Tasks</h3></section>
           <section class="card"><h3>Top Search Items</h3></section>

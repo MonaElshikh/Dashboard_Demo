@@ -15,7 +15,8 @@
   --p-20: 20px;
   --m-20: 20px;
   --mt-0: 0;
-  --fs-14: 14px;
+  --fs-13: 13px;
+  --fs-15: 15px;
   --txt-c: center;
   --rad-6: 6px;
   --rad-10: 10px;
@@ -40,7 +41,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 a {
   text-decoration: none;
 }
@@ -105,18 +105,39 @@ h3 {
 }
 /* End Generals */
 /* Start Components */
-.btn-main {
+.btn {
   padding: 5px 15px;
   border-radius: var(--rad-6);
   border: none;
   font-size: var(--fs-14);
-
   cursor: pointer;
+}
+.btn-prim {
+  background-color: var(--blue-color);
+  color: white;
 }
 .d-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 15px;
+}
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title,
+.sub-title {
+  font-weight: normal;
+  color: gray;
+}
+.title {
+  font-size: var(--fs-15);
+  margin: 7px 0 15px;
+}
+.sub-title {
+  font-size: var(--fs-13);
+  margin: 3px 0px;
 }
 @media (max-width: 768px) {
   .d-grid {
@@ -265,21 +286,17 @@ ul > li > a.active {
   border-radius: var(--rad-10);
   overflow: hidden;
 }
-.card .intro {
+/* Start Welcome Card */
+.welcome > header {
   display: var(--d-flex);
   justify-content: space-between;
   padding: 15px;
-  background-color: #eee;
+  background-color: #ddd;
 }
-.card .intro section > h5 {
-  margin: 5px 0 15px;
-  font-weight: normal;
-  color: gray;
-}
-.card > .intro > img {
+.welcome > header > img {
   width: 200px;
 }
-.card > .intro + img {
+.welcome > header + img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -287,7 +304,7 @@ ul > li > a.active {
   margin-top: -25px;
   margin-left: 10px;
 }
-.info {
+.welcome .info {
   display: var(--d-flex);
   justify-content: space-between;
   padding: var(--p-20);
@@ -295,27 +312,190 @@ ul > li > a.active {
   border-top: solid 2px #eee;
   border-bottom: SOLID 2px #eee;
 }
-.info .data > h4,
-.info .data > h5 {
-  margin: 0 0 5px;
-  font-weight: normal;
+.welcome .info .data {
   text-align: var(--txt-c);
 }
-.info .data > h5 {
-  font-size: 12px;
-  color: gray;
-}
-.foot {
+.welcome > footer {
   padding: var(--p-20);
   text-align: right;
 }
-.foot > button {
-  background-color: var(--blue-color);
-  color: var(--c-white);
-}
-.foot > button:hover {
+.welcome > footer > a:hover {
   background-color: var(--blue-alt-color);
 }
+/* End Welcome Card */
+/* Start Quick Card */
+.quick {
+  padding: var(--p-20);
+}
+.quick > form input[type="text"],
+textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: var(--rad-6);
+  background-color: #eee;
+  border: none;
+}
+.quick > form textarea {
+  resize: none;
+  min-height: 150px;
+}
+.quick input[type="text"]:focus,
+.quick textarea:focus {
+  box-shadow: var(--main-shadow) inset;
+}
+.quick > form input[type="submit"] {
+  float: right;
+}
+/* End Quick Card */
+/* Start targets Card */
+.targets {
+  padding: var(--p-20);
+}
+.targets .info {
+  display: var(--d-flex);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.targets .info .sign {
+  width: 80px;
+  height: 80px;
+}
+.targets .info:nth-child(2) .sign,
+.targets .info:nth-child(2) .details .progress {
+  background-color: rgb(0 117 255 / 20%);
+}
+.targets .info:nth-child(2) .sign > i {
+  color: var(--blue-color);
+}
+.targets .info:nth-child(3) .sign,
+.targets .info:nth-child(3) .details .progress {
+  background-color: rgb(245 158 11 / 20%);
+}
+.targets .info:nth-child(3) .sign > i {
+  color: var(--orange-color);
+}
+.targets .info:nth-child(4) .sign,
+.targets .info:nth-child(4) .details .progress {
+  background-color: rgb(34 197 94 / 20%);
+}
+.targets .info:nth-child(4) .sign > i {
+  color: var(--green-color);
+}
+.targets .info > .details {
+  flex: 1;
+}
+.targets .info > .details p:nth-child(2) {
+  font-weight: bold;
+  color: black;
+}
+.targets .info .details .progress {
+  position: var(--p-relative);
+  height: 4px;
+}
+.targets .details .progress > span {
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.targets .info:nth-child(2) .details .progress > span {
+  width: 80%;
+  background-color: var(--blue-color);
+}
+.targets .info:nth-child(3) .details .progress > span {
+  width: 55%;
+  background-color: var(--orange-color);
+}
+.targets .info:nth-child(4) .details .progress > span {
+  width: 75%;
+  background-color: var(--green-color);
+}
+.targets .details .progress > span > span {
+  position: absolute;
+  bottom: 16px;
+  right: -16px;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.targets .details .progress > span > span::after {
+  content: "";
+  position: absolute;
+  border: solid 5px transparent;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.targets .info:nth-child(2) .details .progress > span > span {
+  background-color: var(--blue-color);
+}
+.targets .info:nth-child(2) .details .progress > span > span::after {
+  border-top-color: var(--blue-color);
+}
+.targets .info:nth-child(3) .details .progress > span > span {
+  background-color: var(--orange-color);
+}
+.targets .info:nth-child(3) .details .progress > span > span::after {
+  border-top-color: var(--orange-color);
+}
+.targets .info:nth-child(4) .details .progress > span > span {
+  background-color: var(--green-color);
+}
+.targets .info:nth-child(4) .details .progress > span > span::after {
+  border-top-color: var(--green-color);
+}
+/* End targets Card */
+/* Start Tickets Card */
+
+.statistics {
+  padding: var(--p-20);
+}
+.tickets {
+  display: var(--d-flex);
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.ticket {
+  padding: 20px;
+  width: calc(50% - 10px);
+  border: solid 2px #ddd;
+  border-radius: var(--rad-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ticket i {
+  margin-bottom: var(--m-20);
+}
+.ticket p {
+  margin: 0 0 10px;
+}
+.ticket p:first-of-type {
+  font-weight: bold;
+  font-size: 20px;
+}
+.tickets .ticket:nth-child(1) > i {
+  color: var(--orange-color);
+}
+.tickets .ticket:nth-child(2) > i {
+  color: var(--blue-color);
+}
+.tickets .ticket:nth-child(3) > i {
+  color: var(--green-color);
+}
+.tickets .ticket:nth-child(4) > i {
+  color: var(--red-color);
+}
+/* End Tickets Card */
+/* End targets Card */
+
 .projects {
   margin: var(--m-20);
   background-color: var(--bg-white);
@@ -323,23 +503,25 @@ ul > li > a.active {
   padding: var(--p-10);
 }
 @media (max-width: 768px) {
-  .card .intro {
+  .welcome .card > header,
+  .welcome .card div {
     justify-content: center;
     text-align: var(--txt-c);
   }
-  .card .intro section > h5 {
-    margin-bottom: 23px;
-  }
-  .card > .intro > img {
+  .card > header > img {
     display: none;
   }
-  .card > .intro + img {
+  .card > header + img {
     margin-left: 50%;
     transform: translateX(-50%);
   }
-    .info {
+  .welcome .info {
     flex-direction: column;
     gap: 20px;
+    text-align: var(--txt-c);
+  }
+  .ticket {
+    width: 100%;
   }
 }
 /* End Content */
